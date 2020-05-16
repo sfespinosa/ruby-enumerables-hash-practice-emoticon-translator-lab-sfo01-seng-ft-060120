@@ -33,5 +33,12 @@ end
 
 def get_japanese_emoticon(file_path, western_emoticon)
   library = load_library(file_path)
-
+  library.each do |meaning, all_languages|
+    all_languages.each do |language, inner_emoticon|
+      if inner_emoticon == western_emoticon
+        return library[meaning][:english]
+      end 
+    end 
+  end 
+  return "Sorry, that emoticon was not found"
 end
