@@ -36,7 +36,7 @@ def get_japanese_emoticon(file_path, western_emoticon)
   library.each do |meaning, all_languages|
     all_languages.each do |language, inner_emoticon|
       if inner_emoticon == western_emoticon
-        return library[meaning][:english]
+        return library[meaning][:japanese]
       end 
     end 
   end 
